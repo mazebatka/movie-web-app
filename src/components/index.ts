@@ -1,2 +1,4 @@
 export * from "./layouts";
-export * from "./ui";
+export * from "./genre";
+export * from "./common";
+export * from "./search";

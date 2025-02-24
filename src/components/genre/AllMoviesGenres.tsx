@@ -1,36 +1,65 @@
 "use client";
-import { useFetchDataFromTMDB } from "@/hooks";
-import { ChevronRight } from "lucide-react";
-import { Button } from "../ui";
 
-type MovieGenre={
-    id:number;
-    name:string;
-}
-type MovieGenresResponse={
-    genres:MovieGenre[];
-}
+import { useFetchDataFromTMDB, useURLSearchParams } from "@/hooks";
+import { Badge } from "../ui";
+import { cn } from "@/lib";
+import { ChevronRight, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-export const AllMoviesGenres = () => {
-    const {data,isLoading}=useFetchDataFromTMDB<MovieGenresResponse>('/genre/movie/list');
+type MovieGenre = {
+  id: number;
+  name: string;
+};
 
-    if(isLoading) return <div>Loading...</div>
+type MovieGenresResponse = {
+  genres: MovieGenre[];
+};
 
-    const genres=data?.genres || [];
+export const AllMoviesGenres = ({ pathname = "/genres" }) => {
+  const { push } = useRouter();
+  const { selectedGenreIds, generateQueryParams } =
+    useURLSearchParams(pathname);
 
-    return (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        {genres.map((genre, index) => (
-          <div
-            key={index}>
-            <Button variant="outline" size="default" className="flex items-center justify-between gap-x-20px">
+  const { data, isLoading } = useFetchDataFromTMDB<MovieGenresResponse>(
+    "/genre/movie/list?language=en"
+  );
+
+  const handleGenreSelection = (genreId: string) => {
+    const newPath = generateQueryParams(genreId);
+
+    push(newPath);
+  };
+
+  if (isLoading) return <div>Loading...</div>;
+
+  const genres = data?.genres || [];
+
+  return (
+    <div className="flex flex-wrap gap-4">
+      {genres.map((genre, index) => {
+        const genreId = genre.id.toString();
+        const isSelected = selectedGenreIds.includes(genreId);
+
+        return (
+          <Badge
+            key={index}
+            variant="outline"
+            className={cn(
+              "rounded-full cursor-pointer",
+              isSelected && "bg-black text-white dark:bg-white dark:text-black"
+            )}
+            onClick={() => handleGenreSelection(genreId)}
+          >
             {genre.name}
-            <ChevronRight className="w-5 h-5 text-gray-600" />
-            </Button>
-            
-          </div>
-        ))}
-      </div>
-    )
-    
-    }
+
+            {isSelected ? (
+              <X size={16} className="ml-2" />
+            ) : (
+              <ChevronRight size={16} className="ml-2" />
+            )}
+          </Badge>
+        );
+      })}
+    </div>
+  );
+};
