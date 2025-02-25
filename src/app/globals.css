@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .search-result {
+    @apply absolute left-1/2 top-[63px] w-[335px] -translate-x-1/2 lg:top-[40.5px] lg:w-[577px];
+  }
+}

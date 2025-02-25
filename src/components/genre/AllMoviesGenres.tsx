@@ -6,15 +6,6 @@ import { cn } from "@/lib";
 import { ChevronRight, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-type MovieGenre = {
-  id: number;
-  name: string;
-};
-
-type MovieGenresResponse = {
-  genres: MovieGenre[];
-};
-
 export const AllMoviesGenres = ({ pathname = "/genres" }) => {
   const { push } = useRouter();
   const { selectedGenreIds, generateQueryParams } =
