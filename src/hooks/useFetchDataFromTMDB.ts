@@ -6,3 +6,4 @@ export const useFetchDataFromTMDB =<T> (endpoint: string) => {
 
     return { data, isLoading };
 };
+

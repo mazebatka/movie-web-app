@@ -17,7 +17,6 @@ export const SearchBarForOtherPage = ({
   }: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(value);
   };
-console.log(searchValue)
 
   const removeSearchValue = () => setSearchValue("");
 
@@ -50,6 +49,7 @@ console.log(searchValue)
           removeSearchValue={removeSearchValue}
         />
       )}
+      
     </div>
   );
 };

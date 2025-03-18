@@ -22,6 +22,7 @@ export const SearchResultList = ({
 
   const movies = data?.results || [];
   const firstFiveMovies = movies.slice(0, 5);
+  console.log(firstFiveMovies);
 
   if (isLoading) return <SearchLoading />;
   if (!movies.length) return <SearchNotFound />;
