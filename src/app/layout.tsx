@@ -1,9 +1,9 @@
 import { Header } from "@/components";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { PropsWithChildren } from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {

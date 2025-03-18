@@ -1,19 +1,7 @@
-type Todo = {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
+import {Home} from '@/components';
+
+const HomePage = async () => {
+  return <Home />;
 };
 
-const Home = () => {
-  
-  return (
-    <div 
-    className="flex flex-col
-    justify-center  "> Home Page 
-    
-    </div>
-  );
-};
-
-export default Home;
+export default HomePage;
