@@ -34,3 +34,8 @@ type MovieGenre = {
   type MovieVideosResponse = {
     results: VideoDetails[];
   };
+  type MovieCategoryPage = {
+    title: string;
+    category: string;
+    seeMorePath: string;
+  };
