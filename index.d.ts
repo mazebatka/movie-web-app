@@ -24,3 +24,13 @@ type MovieGenre = {
     total_results: number;
     results: MovieDetail[];
   };
+
+  type VideoDetails = {
+    key: string;
+    site: string;
+    type: string;
+  };
+  
+  type MovieVideosResponse = {
+    results: VideoDetails[];
+  };

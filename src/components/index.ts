@@ -4,3 +4,4 @@ export * from "./common";
 export * from "./search";
 export * from "./movie";
 export * from "./home";
+export * from "./carousel";

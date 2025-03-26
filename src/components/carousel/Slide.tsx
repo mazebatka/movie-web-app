@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MovieImage } from "../movie";
+import { AboutMovie } from "./AboutMovie";
 
 type SlideProp = {
   movie: MovieDetail;
@@ -17,6 +18,8 @@ export const Slide = ({ movie }: SlideProp) => {
           className="h-[246px] lg:h-[600px]"
         />
       </Link>
+
+      <AboutMovie movie={movie} />
     </div>
   );
 };

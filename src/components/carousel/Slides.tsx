@@ -24,8 +24,8 @@ export const Slides = ({ movies }: SlidesProps) => {
         ))}
       </CarouselContent>
 
-      <CarouselPrevious className="flex absolute top-1/2 -translate-y-1/2 left-11" />
-      <CarouselNext className="flex absolute top-1/2 -translate-y-1/2 right-11" />
+      <CarouselPrevious className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-11" />
+      <CarouselNext className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-11" />
     </Carousel>
   );
 };
