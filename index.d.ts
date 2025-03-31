@@ -39,3 +39,11 @@ type MovieGenre = {
     category: string;
     seeMorePath: string;
   };
+  type PageRouteParams = {
+    params: {
+      segments: string[];
+    };
+    searchParams: {
+      page?: string;
+    };
+  };

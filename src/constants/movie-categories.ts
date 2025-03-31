@@ -16,3 +16,5 @@ export const movieCategories: MovieCategoryPage[] = [
       seeMorePath: "/category/top_rated",
     },
   ];
+
+  export const CATEGORY_NAMES =["upcoming","popular","top_rated"];

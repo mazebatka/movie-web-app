@@ -1,8 +1,9 @@
+import { CATEGORY_NAMES } from "@/constants";
 import { fetchDataFromTMDB } from "@/utils";
 import { AxiosError } from "axios";
 
 type CategoryMoviesRequest = {
-  page: string;
+  page: number;
   segments: string[];
 };
 
@@ -11,6 +12,8 @@ export const getMoviesByCategory = async ({
   segments,
 }: CategoryMoviesRequest) => {
   const categoryPath = segments.join("/");
+  const lastCategoryName = segments[segments.length - 1];
+  const formattedCategoryName = lastCategoryName.replace(/_/g, " ");
 
   try {
     const { results: movies, total_pages: totalPages } =
@@ -18,7 +21,12 @@ export const getMoviesByCategory = async ({
         `/movie/${categoryPath}?language=en-US&page=${page}`
       );
 
-    return { movies, totalPages };
+    const categoryTitle = CATEGORY_NAMES.
+    includes(String(formattedCategoryName))
+      ? formattedCategoryName
+      : "More Like This";
+
+    return { movies, totalPages, categoryTitle };
   } catch (error: unknown) {
     const { message, response } = error as AxiosError;
 

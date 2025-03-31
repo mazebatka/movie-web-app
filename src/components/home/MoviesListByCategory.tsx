@@ -8,7 +8,7 @@ export const MoviesListByCategory = async (props: MovieCategoryPage) => {
   const { title, category, seeMorePath } = props;
 
   const response = await getMoviesByCategory({
-    page: "1",
+    page: 1,
     segments: [category],
   });
 
@@ -16,7 +16,7 @@ export const MoviesListByCategory = async (props: MovieCategoryPage) => {
   const firstTenMovies = movies.slice(0, 10);
 
   return (
-    <div className="w-full max-w-screen-xl px-5 lg:px-0 space-y-8 mt-12">
+    <div className="w-full max-w-screen-xl px-5 lg:px-0 space-y-8 my-10">
       <div className=" flex items-center justify-between ">
         <h3 className="text-foreground text-2xl font-semibold">{title}</h3>
 

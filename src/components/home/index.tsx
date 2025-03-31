@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "../carousel";
 import { MoviesListByCategory } from "./MoviesListByCategory";
-import { movieCategories } from "@/components/constants";
+import { movieCategories } from "@/constants";
 
 export const Home = () => {
   return (

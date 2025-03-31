@@ -6,7 +6,7 @@ import { Button } from "@/components/ui";
 import {
   searchBarAnimationTransition,
   searchBarAnimationVariants,
-} from "@/components/constants";
+} from "@/constants";
 import { useWidth } from "@/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";

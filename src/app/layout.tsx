@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
 
           {children}
 
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
