@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Button } from "@/components/ui";
 import React from "react";
+import { Details } from "@/components";
 
 type MovieRouteParams = {
   params: {
@@ -13,9 +13,7 @@ const MovieDetails = async ({ params }: MovieRouteParams) => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Button variant="outline">Shadcn Button</Button>
-      <h1>Movie Details</h1>
-      <p>ID: {movieId}</p>
+      <Details movieId={movieId}/>
     </Suspense>
   );
 };

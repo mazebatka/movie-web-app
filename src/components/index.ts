@@ -7,3 +7,4 @@ export * from "./home";
 export * from "./carousel";
 export * from "../constants";
 export * from "./category";
+export * from "./details";

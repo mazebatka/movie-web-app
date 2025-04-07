@@ -47,3 +47,18 @@ type MovieGenre = {
       page?: string;
     };
   };
+
+  type MovieCastMember = {
+    name: string;
+    known_for_department: string;
+  };
+
+  type MovieCrewMember = {
+    name: string;
+    job: string;
+  };
+
+  type MovieCreditsResponse = {
+    cast: MovieCastMember[];
+    crew: MovieCrewMember[];
+  };
