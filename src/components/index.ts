@@ -8,3 +8,4 @@ export * from "./carousel";
 export * from "../constants";
 export * from "./category";
 export * from "./details";
+export * from "./genre-or-search";

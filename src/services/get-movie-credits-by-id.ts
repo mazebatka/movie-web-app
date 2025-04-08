@@ -1,13 +1,14 @@
 import { fetchDataFromTMDB } from "@/utils"
 import { getNamesByRole } from "@/utils/credits";
 
-export const getMovieCreditsById = async (movieId: string) => {
+export const getMovieCreditsById = async (movieId: number) => {
     try{
         const {cast, crew} = await fetchDataFromTMDB<MovieCreditsResponse>(`/movie/${movieId}/credits?language=en-US`);
 
+
         const actors = getNamesByRole(cast, "Acting");
-        const directors = getNamesByRole(crew, "Director");
-        const writers = getNamesByRole(crew, "Writer");
+        const directors = getNamesByRole(crew, "Directing");
+        const writers = getNamesByRole(crew, "Writing");
 
         return {
             actors,

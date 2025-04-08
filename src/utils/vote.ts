@@ -15,4 +15,4 @@ export const convertVoteCount=(voteCount:number) => {
     return voteCount % 1 === 0
     ? `${voteCount}${unit}`
     : `${voteCount.toFixed(1)}${unit}`;
-}:
+};

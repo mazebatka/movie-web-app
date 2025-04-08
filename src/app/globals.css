@@ -72,6 +72,12 @@ body {
 }
 
 @layer utilities {
+  .page-primary{
+    @apply mx-auto max-w-screen-xl px-5 lg:px-0;
+  }
+  .page-detail{
+    @apply mx-auto max-w-screen-sxl mt-[60px];
+  }
   .search-result {
     @apply absolute left-1/2 top-[63px] w-[335px] -translate-x-1/2 lg:top-[40.5px] lg:w-[577px];
   }

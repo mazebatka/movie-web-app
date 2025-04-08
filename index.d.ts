@@ -62,3 +62,8 @@ type MovieGenre = {
     cast: MovieCastMember[];
     crew: MovieCrewMember[];
   };
+
+  type ParralelRoutesLayoutProps = {
+    genres: React.ReactNode;
+    movies: React.ReactNode;
+  };

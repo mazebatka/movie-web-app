@@ -18,7 +18,6 @@ export const MovieImage = ({
   const imageUrl = `${process.env.TMDB_IMAGE_SERVICE_URL}/${imageWidth}${posterPath}`;
   const imagePathNotComplete = !posterPath;
 
-  console.log(imageUrl);
   if (imagePathNotComplete) {
     return (
       <div className={cn("relative overflow-hidden", className)}>

@@ -9,7 +9,10 @@ export default {
   ],
   theme: {
   	extend: {
-  		colors: {
+		screens:{
+			sxl:"1080px",
+		},
+		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

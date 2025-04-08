@@ -1,22 +1,34 @@
 import Link from "next/link";
 import { MovieImage } from "./MovieImage";
 import { Vote } from "../common";
+import { ClassValue } from "clsx";
+import { cn } from "@/lib";
 
 type MovieListCardProps = {
   movie: MovieDetail;
+  imageHeight?: ClassValue;
+  imageWidth?: ClassValue;
 };
 
 export const MovieListCard = (props: MovieListCardProps) => {
-  const { movie } = props;
+  const { movie, imageHeight, imageWidth } = props;
   return (
     <Link
       href={`/details/${movie.id}`}
-      className="overflow-hidden rounded-lg bg-secondary space-y-1 w-[157.5px] lg:w-[230px]"
+      className={cn(
+        "overflow-hidden rounded-lg bg-secondary space-y-1 w-[157.5px] lg:w-[230px]",
+        imageHeight,
+        imageWidth
+      )}
     >
       <MovieImage
-        posterPath={movie.backdrop_path}
+        posterPath={movie.poster_path}
         imageWidth="original"
-        className={"w-[157.5px] h-[234px] lg:w-[230px] lg:h-[340px]"}
+        className={cn(
+          "w-[157.5px] h-[234px] lg:w-[230px] lg:h-[340px]",
+          imageHeight,
+          imageWidth
+        )}
       />
 
       <div className="p-2">
